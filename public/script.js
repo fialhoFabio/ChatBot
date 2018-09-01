@@ -1,15 +1,17 @@
-const textInput = document.getElementById('textInput');
-const chat = document.getElementById('chat');
+import ChatBotController from './ChatBotController';
 
-let context = {};
+const ChatBot = new ChatBotController();
+console.log(ChatBot.getAnswer());
 
-const templateChatMessage = (message, from) => `
-  <div class="from-${from}">
-    <div class="message-inner">
-      <p>${message}</p>
-    </div>
+const chatBot = document.getElementById('chatBot');
+const input = chatBot.querySelector('input');
+const chat = chatBot.querySelector('div#chat');
+
+const templateChatMessage = (message, from) => (`
+  <div class = ${from}">
+    <p>${message}</p>
   </div>
-  `;
+`);
 
 // Crate a Element and append to chat
 const InsertTemplateInTheChat = (template) => {
@@ -20,37 +22,21 @@ const InsertTemplateInTheChat = (template) => {
 };
 
 // Calling server and get the watson output
-const getWatsonMessageAndInsertTemplate = async (text = '') => {
-  const uri = 'http://localhost:3000/conversation/';
-
-  const response = await (await fetch(uri, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      text,
-      context,
-    }),
-  })).json();
-
-  context = response.context;
-
-  const template = templateChatMessage(response.output.text, 'watson');
-
+const getWatsonMessageAndInsertTemplate = (text = '') => {
+  const template = templateChatMessage(ChatBot.getAnswer(text), 'watson');
   InsertTemplateInTheChat(template);
 };
 
-textInput.addEventListener('keydown', (event) => {
-  if (event.keyCode === 13 && textInput.value) {
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter' && input.value) {
     // Send the user message
-    getWatsonMessageAndInsertTemplate(textInput.value);
+    getWatsonMessageAndInsertTemplate(input.value);
 
-    const template = templateChatMessage(textInput.value, 'user');
+    const template = templateChatMessage(input.value, 'user');
     InsertTemplateInTheChat(template);
 
-    // Clear input box for further messages
-    textInput.value = '';
+    input.value = '';
   }
 });
-
 
 getWatsonMessageAndInsertTemplate();
