@@ -1,42 +1,27 @@
-import ChatBotController from './ChatBotController';
-
+// chatBotController.js
 const ChatBot = new ChatBotController();
-console.log(ChatBot.getAnswer());
 
-const chatBot = document.getElementById('chatBot');
-const input = chatBot.querySelector('input');
-const chat = chatBot.querySelector('div#chat');
+const chatBotElement = document.getElementById('chatBot');
+const chat = chatBotElement.querySelector('div#chat');
+const input = chatBotElement.querySelector('input');
 
-const templateChatMessage = (message, from) => (`
-  <div class = ${from}">
-    <p>${message}</p>
-  </div>
-`);
-
-// Crate a Element and append to chat
-const InsertTemplateInTheChat = (template) => {
+const insertChatMessage = (message, isUserMessage = false) => {
+  const className = isUserMessage ? 'user' : 'watson';
   const div = document.createElement('div');
-  div.innerHTML = template;
-
-  chat.appendChild(div);
-};
-
-// Calling server and get the watson output
-const getWatsonMessageAndInsertTemplate = (text = '') => {
-  const template = templateChatMessage(ChatBot.getAnswer(text), 'watson');
-  InsertTemplateInTheChat(template);
+  div.setAttribute('class', className);
+  const p = document.createElement('p');
+  p.innerText = message;
+  chat.appendChild(div.appendChild(p));
 };
 
 input.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && input.value) {
-    // Send the user message
-    getWatsonMessageAndInsertTemplate(input.value);
-
-    const template = templateChatMessage(input.value, 'user');
-    InsertTemplateInTheChat(template);
-
-    input.value = '';
+  const isEnterKey = e.key === 'Enter';
+  const haveUserMessage = !!input.value;
+  if (isEnterKey && haveUserMessage) {
+    const userMessage = input.value;
+    insertChatMessage(userMessage, true);
+    ChatBot.sendMessage(userMessage, res => insertChatMessage(res));
   }
 });
 
-getWatsonMessageAndInsertTemplate();
+ChatBot.sendMessage('', res => insertChatMessage(res));
