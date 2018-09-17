@@ -1,6 +1,6 @@
 /*  eslint no-underscore-dangle: ["error", { "allowAfterThis": true }]  */
 
-// its used on script.js
+// its used on chatBotScript.js
 class ChatBotController {
   constructor() {
     this.conversation_id = {};

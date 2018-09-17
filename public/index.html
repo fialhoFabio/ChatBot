@@ -2,15 +2,19 @@
   <head>
     <title>Atento</title>
     <!--<link rel="shortcut icon" href="./favicon.jpg" type="image/x-icon"> Put Atento's icon here-->
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatBotStyles.css">
     <script src="ChatBotController.js"></script>
   </head>
   <body>
     <div id="chatBot">
-      <div class="title"></div>
+      <div class="title">
+        <img alt="atento_digital" height="100%" src="Imagens/atento_digital.png"/>
+      </div>
       <div id="chat"></div>
-      <input autofocus placeholder="Digite aqui" type="text">
+      <input autofocus placeholder="Escreva aqui sua mensagem..." type="text">
+      <img src="Imagens/send_button.svg">
     </div>
-    <script src="./script.js"></script>
+    <script src="chatBotScript.js"></script>
   </body>
 </html>

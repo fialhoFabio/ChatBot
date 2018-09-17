@@ -1,46 +1,6 @@
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 12px;
-}
-
-body {
-  font-family: Helvetica, Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-div#chatBot {
-  border: 2px solid #323232;
-  bottom: 0;
-  box-sizing: border-box;
-  height: 40%;
-  min-width: 400px;
-  position: fixed;
-  right: 0;
-  width: 20%;
-}
-
-div#chatBot > div.title {
-  border-bottom: 1px solid #323232;
-  height: 10%;
-}
-
-div#chatBot > div#chat {
-  height: 80%;
-  overflow-x: hidden;
-}
-
-div#chatBot > div#chat > div.from-user {
-  text-align: right;
-}
-
-div#chatBot > div#chat > div.from-watson {
-}
-
-div#chatBot > input {
-  height: 10%;
-  width: 100%;
+:root {
+  --main-color-blue: rgb(0, 32, 96);
+  --main-color-blue-opc: rgba(0, 32, 96, 0.7);
+  --main-color-orange: rgb(251, 125, 32);
+  --main-color-orange-opc: rgba(251, 125, 32, 0.7);
 }
