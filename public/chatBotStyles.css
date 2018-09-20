@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+div#chatBot {
+  border: 1px solid var(--main-color-blue);
+  bottom: 0;
+  box-sizing: border-box;
+  height: 70%;
+  width: 450px;
+  position: fixed;
+  right: 3%;
+}
+
+div#chatBot > div.title {
+  background: var(--main-color-blue);
+  height: 15%;
+}
+
+div#chatBot > div#chat {
+  height: 75%;
+  overflow-y: scroll;
+}
+
+div#chatBot > div#chat > div.from-user,
+div#chatBot > div#chat > div.from-watson {
+  align-items: center;
+  display: flex;
+  margin: 8px 0;
+}
+
+div#chatBot > div#chat > div.from-user {
+  flex-direction: row-reverse;
+}
+
+div#chatBot > div#chat > div.from-watson {
+  flex-direction: row;
+}
+
+div#chatBot > div#chat > div.from-user:before {
+  content: url(Imagens/user_icon.png);
+}
+
+div#chatBot > div#chat > div.from-watson:before {
+  content: url(Imagens/laura_icon.png);
+}
+
+div#chatBot > div#chat > div.from-user > div.inner-message,
+div#chatBot > div#chat > div.from-watson > div.inner-message{
+  border: 1px solid black;
+  overflow-wrap: break-spaces;
+  padding: 8px;
+}
+
+div#chatBot > div#chat > div.from-user > div.inner-message {
+  background: var(--main-color-orange-opc);
+  border-radius: 8px 8px 8px 0px;
+  margin-left: 18%;
+}
+
+div#chatBot > div#chat > div.from-watson > div.inner-message{
+  background: var(--main-color-blue-opc);
+  border-radius: 8px 8px 0px 8px;
+  margin-right: 18%;
+}
+
+div#chatBot > input {
+  border: none;
+  border-top: 1px solid #999;
+  height: 10%;
+  outline: none;
+  padding: 0 8px;
+  width: 100%;
+}
+
+div#chatBot > img {
+  bottom: 40px;
+  left: 90%;
+  position: relative;
+  height: 32px;
+}
+
+div#chatBot > img:hover {
+  cursor: pointer;
+}
