@@ -1,0 +1,45 @@
+body > #content {
+  display: inline-flex;
+  justify-content: center;
+}
+
+body > #content > div {
+  align-items: center;
+  background: #eeeeee;
+  border: 1px solid var(--main-color-blue);
+  border-top-left-radius: 50px;
+  display: inline-flex;
+  justify-content: center;
+  height: 590px;
+  margin-top: 5px;
+  width: 450px;
+}
+
+body > #content > div > form {
+  width: 250px;
+}
+
+body > #content > div >  form > div{
+  margin-bottom: 20px;
+}
+
+body > #content > div > form > div > input{
+  background: none;
+  border: none;
+  border-bottom: 2px solid var(--main-color-blue);
+  outline: none;
+  width: 100%;
+}
+
+body > #content > div > form > div > button {
+  background: var(--main-color-blue-opc);
+  border: 1px solid black;
+  color: #fff;
+  height: 40px;
+  width: 100px;
+}
+
+body > #content > div > form > div > button:hover {
+  background: var(--main-color-blue);
+  cursor: pointer;
+}

@@ -4,3 +4,24 @@
   --main-color-orange: rgb(251, 125, 32);
   --main-color-orange-opc: rgba(251, 125, 32, 0.7);
 }
+
+body > #header {
+  align-items: center;
+  background: var(--main-color-blue);
+  display: inline-flex;
+  min-height: 100px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+body > #header:last-child {
+  height: 50px;
+}
+
+body > #content {
+  align-items: center;
+  display: inline-flex;
+  flex-direction: row;
+  min-height: 500px;
+  width: 65%;
+}

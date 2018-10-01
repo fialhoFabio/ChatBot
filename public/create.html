@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <title>Atento</title>
+    <!--<link rel="shortcut icon" href="./favicon.jpg" type="image/x-icon"> Put Atento's icon here-->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatBotStyles.css">
+    <link rel="stylesheet" href="create.css">
+    <script src="ChatBotController.js"></script>
+  </head>
+  <body>
+    <div id="header">
+      <img alt="atento_digital" src="Imagens/atento_digital.png"/>
+      <img alt="logo_fiap" height="30" src="Imagens/logo-fiap_branco.png"/>
+    </div>
+    <div id = "content">
+      <div>
+        <form id="createForm">
+          <div><label for="nome">Nome:</label><br><input id="nome" type="text" required></div>
+          <div><label for="cod">Codigo da vaga:</label><br><input id="cod" type="number" required></div>
+          <div><label for="cpf">CPF:</label><br><input id="cpf" type="text" required></div>
+          <div><label for="email">E-mail:</label><br><input id="email" type="email" required></div>
+          <div><label for="celular">Celular:</label><br><input id="celular" type="tel" required></div>
+          <div><label for="pais">Pais:</label><br><input id="pais" type="text" required></div>
+          <div><label for="endereco">Endereço:</label><br><input id="endereco" type="text" required></div>
+          <div><label for="cep">CEP:</label><br><input id="cep" type="number" required></div>
+          <div><label for="func">Id funcionario indicação:</label><br><input id="func" type="number"></div>
+          <div><button>Cadastrar</button></div>
+        </form>
+      </div>
+    </div>
+    <div id="chatBot">
+      <div class="title">
+        <img alt="atento_digital" height="100%" src="Imagens/atento_digital.png"/>
+      </div>
+      <div id="chat"></div>
+      <input autofocus placeholder="Escreva aqui sua mensagem..." type="text">
+      <img src="Imagens/send_button.svg">
+      <script src="chatBotScript.js"></script>
+      <script src="create.js"></script>
+    </div>
+  </body>
+</html>
+

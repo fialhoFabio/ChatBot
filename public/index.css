@@ -1,0 +1,19 @@
+body > #content > a > img {
+  height: 65%
+}
+
+body > #content > div#lara-presentation {
+  background: #eee;
+  border-radius: 10px;
+  height: 400px;
+  margin: 50px;
+  padding: 30px;
+}
+
+body > #content > div#lara-presentation > * {
+  padding-bottom: 25px;
+}
+
+body > #content > div#lara-presentation > h2 {
+  color: var(--main-color-blue-opc);
+}
