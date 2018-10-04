@@ -25,7 +25,6 @@ function cb (req, res) {
     (email ? "'" + email + "'" : null) + ',' +
     (func ? "'" + func + "'" : null)
   );
-  console.log(values);
   execSQLQuery(
     'INSERT INTO funcionario (' +
     'func_nome,' +
